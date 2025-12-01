@@ -1,0 +1,3 @@
+.counter{display:flex;align-items:center;gap:1rem;padding:1rem;background:white;border-radius:8px;box-shadow:0 2px 8px rgba(136,58,234,0.08)}
+.counter button{padding:.5rem 1rem;border:none;background:rgb(136,58,234);color:#fff;border-radius:4px;cursor:pointer}
+.counter span{font-size:1.5rem;font-weight:700;color:rgb(var(--accent-dark))}

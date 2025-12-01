@@ -1,0 +1,4 @@
+.discover-page{padding:1rem;padding-bottom:5rem;min-height:100vh;background:#f8f9fa}
+.discover-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+.cards-container{display:flex;justify-content:center;align-items:flex-start;min-height:560px}
+.no-more-dogs{background:#fff;padding:2rem;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}

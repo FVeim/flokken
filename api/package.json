@@ -1,0 +1,14 @@
+{
+  "name": "flokken-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun src/index.js",
+    "start": "bun src/index.js",
+    "build": "bun build src/index.js --outdir dist"
+  },
+  "dependencies": {
+    "elysia": "^0.7.30"
+  }
+}
