@@ -11,13 +11,30 @@ export default function DogCard({ dog, onSwipe }:{dog:DogProfile,onSwipe:(d:'lef
   const handleTouchEnd=()=>{ if(Math.abs(offset)>100){ onSwipe(offset>0?'right':'left'); } setOffset(0); };
   return (
     <div className="dog-card" style={{transform:`translateX(${offset}px) rotate(${offset*0.06}deg)`}} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-      <div className="dog-images"><img src={dog.images[idx]} alt={dog.name} /></div>
-      <div className="dog-info">
-        <h2>{dog.name}, {dog.age}y</h2>
-        <p className="breed">{dog.breed}</p>
-        <div className="tags">{dog.sports.map(s=> <span key={s} className="tag sport">{s}</span>)}{dog.training.map(t=> <span key={t} className="tag training">{t}</span>)}</div>
-        <p className="bio">{dog.bio}</p>
-        <div className="owner-info"><img className="owner-image" src={dog.owner.image} alt={dog.owner.name} /> <span>Handled by {dog.owner.name}</span></div>
+      <div className="dog-images">
+        {dog.images[idx] ? (
+          <img src={dog.images[idx]} alt={dog.name} />
+        ) : (
+          <span>🐕</span>
+        )}
+      </div>
+      <div className="dog-info-overlay">
+        <div className="primary-info">
+          <h2>{dog.name}, {dog.age}y</h2>
+          <p className="breed">{dog.breed} • 📍 {dog.location}</p>
+        </div>
+        <div className="dog-details">
+          <div className="tags">{dog.sports.map(s=> <span key={s} className="tag sport">{s}</span>)}{dog.training.map(t=> <span key={t} className="tag training">{t}</span>)}</div>
+          <p className="bio">{dog.bio}</p>
+        </div>
+        <div className="owner-info">
+          {dog.owner.image ? (
+            <img className="owner-image" src={dog.owner.image} alt={dog.owner.name} />
+          ) : (
+            <div className="owner-image placeholder">👤</div>
+          )}
+          <span>Handled by {dog.owner.name}</span>
+        </div>
       </div>
       <div className="action-buttons">
         <button className="action-btn dismiss" onClick={()=>onSwipe('left')} aria-label="Pass">✕</button>

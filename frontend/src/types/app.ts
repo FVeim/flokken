@@ -13,4 +13,4 @@ export interface DogProfile {
 
 export interface Message { id:string; senderId:string; content:string; timestamp:string; read:boolean }
 export interface Chat { id:string; participants:string[]; lastMessage?:Message; unreadCount:number; isGroup:boolean }
-export interface Group { id:string; name:string; description:string; image?:string }
+export interface Community { id:string; name:string; description:string; image?:string }

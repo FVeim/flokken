@@ -1,11 +1,11 @@
 import './Navigation.css';
 
-type Page = 'Discover' | 'Messages' | 'Groups' | 'Profile';
+type Page = 'Discover' | 'Messages' | 'Communities' | 'Profile';
 
 const items: Array<{ name: Page; icon: string }> = [
   { name: 'Discover', icon: '🔍' },
   { name: 'Messages', icon: '💬' },
-  { name: 'Groups', icon: '👥' },
+  { name: 'Communities', icon: '👥' },
   { name: 'Profile', icon: '🐕' },
 ];
 

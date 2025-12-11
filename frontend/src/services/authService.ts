@@ -2,8 +2,7 @@ import {
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword, 
   signOut as firebaseSignOut,
-  onAuthStateChanged,
-  User
+  onAuthStateChanged
 } from 'firebase/auth';
 import { auth } from '../lib/firebase';
 
@@ -24,12 +23,12 @@ export const authService = {
   },
 
   // Get current user
-  getCurrentUser(): User | null {
+  getCurrentUser() {
     return auth.currentUser;
   },
 
   // Listen to auth state changes
-  onAuthStateChange(callback: (user: User | null) => void) {
+  onAuthStateChange(callback: (user: ReturnType<typeof auth.currentUser>) => void) {
     return onAuthStateChanged(auth, callback);
   },
 };
